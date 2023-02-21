@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "1b0a9a32-9fd7-4362-abb8-32906b3d57b9",
+		"name": "Coursework-1-Individual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25366136"
+	},
+	"item": [
+		{
+			"name": "items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/items",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"test\", \"phone\": \"123123123123\", \"items\": [\n    {\"id\": 1,\n        \"subject\": \"Math\",\n        \"location\": \"London\",\n        \"price\": \"100\",\n        \"spaces\": 9,\n        \"image\": \"icon.png\"},\n        {\n            \"id\": 2,\n        \"subject\": \"English\",\n        \"location\": \"Bristol\",\n        \"price\": \"120\",\n        \"spaces\": 5,\n        \"image\": \"eng.png\"\n        }\n] }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orders",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1 }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
