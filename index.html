@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title> 
+</head>
+<link href="style.css" rel='stylesheet'>
+
+<body>
+    <!--Div to handle the Heading of the Page -->
+    <div class="pageheadingbox">
+        <h1 class="pageheading">School Cart </h1> 
+    </div>
+    <div id="app">
+        <!--This handles the menu bar at the top along with all the buttons for it.-->
+        <div class="navbar">
+            <div class="dropdown">
+                <button style="width: 150px;" class="dropbtn">SORT 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <!--This enable to show the sort button and function them.-->
+                <div class="dropdown-content">
+                    <div class="btn-group"> 
+                        <button v-on:click= "sort('subject')" v-bind:class="[sortBy === 'subject' ? sortDirection:'']">Alphabetical</button></br>
+                        <button v-on:click= "sort('price')" v-bind:class="[sortBy === 'price' ? sortDirection : '']">Price</button></br>
+                        <button v-on:click= "sort('location')" v-bind:class="[sortBy === 'location' ? sortDirection : '']">Location</button></br>
+                        <button v-on:click= "sort('spaces')" v-bind:class="[sortBy === 'spaces' ? sortDirection : '']">Availablity</button></br>
+                    </div>
+                </div>
+            </div>    
+            <!--This shows the lesson and cart button..-->
+            <div class="dropdown">
+                <!--Cart button onlt visible if Cart have items using V-if property-->
+                <button v-if="cart.length>0"style="width: 150px;" class="dropbtn" v-on:click="navigateTo('cart')" >CART</button>
+                <button style="width: 150px;" class="dropbtn" v-on:click="navigateTo('items')" >LESSONS</button>
+                <input class="search" type="text" @input="filteredsearch()" v-model="search" placeholder="Search"/>
+            </div>
+        </div>
+        <!--This section is for the content of lessons, cart, sort, search-->
+        <div>
+            <!--This section is for the search function-->
+            <div style = "white-space:pre" class="content">
+                <p v-for="item in items" v-if="page == 'items'":key="item.id" class="box" style="width:200px" >
+                    <img v-bind:src="'/img/' + item.image" style="margin-left: 60px;" alt="" width="60px" height="60px">
+                    Subject: {{item.subject}}
+                    Location: {{item.location}}
+                    Price: {{item.price}}
+                    Spaces: {{item.spaces}}
+                    <br/>
+                    <button class="cartbutton" v-on:click= "addtocart(item)" style="margin-left: 0px;" >Add to cart</button>
+                </p>
+            </div>
+            <!--This section is for the  cart function-->
+            <div>
+                <div style = "white-space:pre" class="content">
+                    <p v-if="page ==='cart'" v-for="(item,id) in cart" :key="item.id" class="box" style="width:200px" >
+                        <img  v-bind:src="'/img/' + item.image" style="margin-left: 60px;" alt="" width="60px" height="60px">
+                        Subject: {{item.subject}}
+                        Location: {{item.location}}
+                        Price: {{item.price}}
+                        </br>
+                        <button class="cartbutton" v-on:click= "removeitem(item)" style="width: 150px;">Remove</button>
+                    </p>
+                </div>
+                <!--This section is for the checkout form.-->
+                <div id="checkout" class="checkout" v-if="page ==='cart'">
+                    <h1>Checkout Out: </h1>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        <label for="tel">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required><br><br>
+                        <button v-on:click="submitClick()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    <!--The script tag connecting script.js file-->
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

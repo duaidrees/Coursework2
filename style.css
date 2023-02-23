@@ -1,0 +1,143 @@
+
+body{
+    background-color:white;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.pageheadingbox{
+    margin: 20px;
+    padding: 0px;
+
+}
+
+.pageheading{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xxx-large;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+
+}
+/*Css for the menu/nav bar at the top of page*/
+.navbar{
+    overflow: hidden;
+    background-color:black;
+    padding: 0%;
+    margin :0px;
+}
+
+
+.dropdown {
+    float: left;
+    overflow: hidden;  
+  }
+
+.dropdown .dropbtn {
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: black;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    cursor: pointer;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #04AA6D; /* Green background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+  }  
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/*Button CSS for Sort Dropdown Menu */
+.btn-group button {
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid #04AA6D; /* Green background */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }  
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+
+/*Css for the arrow for Sort*/
+.asc:after{
+  content: "\25B2"
+}
+
+.desc:after{
+  content: "\25BC"
+}
+
+
+/*Css for the content of lessons*/
+.content{
+    align-items:baseline;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+
+}
+/*Css for the box of lessons*/
+.box{
+    border: 1px solid black;
+    padding: 10px;
+    display: grid;
+    border-radius: 5%;
+    margin: 10px;
+    display: block;
+    grid-template-columns: auto auto;
+    grid-auto-flow: column;
+
+}
+
+/*Css for Add to Cart button in each lesson*/
+.cartbutton{
+    background-color: rgb(85, 207, 91);
+    border: 1px solid rgb(85, 125, 207);
+    height: 39px;
+    cursor: pointer;
+    color:aliceblue;
+    margin-left: auto;
+    border-radius: 50px;
+    width: 90%;
+}
+
+/*Css for the serach bar in menu*/
+.search{
+  font-family: inherit;
+  margin: 0px;
+  padding: 15px;
+  width: 800px;
+  font-size: 15px;
+}
+
+
+.checkout{
+  border: 1px solid black;
+
+}
